@@ -1,0 +1,30 @@
+[
+    {
+        "groupe": "CODE128",
+        "datas": ["CODE128", "CODE128 A/B/C"]
+    },
+    {
+        "groupe": "EAN",
+        "datas": ["EAN-2", "EAN-5", "EAN-8", "EAN-13", "UPC (A)", "UPC (E)"]
+    },
+    {
+        "groupe": "CODE39", 
+        "datas": ["CODE39"]
+    },
+    {
+        "groupe": "ITF", 
+        "datas": ["ITF", "ITF-14"]
+    }, 
+    {
+        "groupe": "MSI",
+        "datas": ["MSI10", "MSI11", "MSI1010", "MSI1110"]
+    }, 
+    {
+        "groupe": "PHARMACODE",
+        "datas" : ["Pharmacode"]
+    },
+    {
+        "groupe": "CODABAR",
+        "datas": ["Codabar"]
+    }
+]
