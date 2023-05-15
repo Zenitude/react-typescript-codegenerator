@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { CodeType, ContextDatasProps, DatasContextType } from '../types/types';
-import icone from '../../assets/Zen.png';
+import icone from '../../assets/Zen.webp';
 export const Context = createContext<DatasContextType | null>(null);
 
 export const ContextProvider = ({children} : ContextDatasProps) => {
