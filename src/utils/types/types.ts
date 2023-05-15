@@ -9,6 +9,11 @@ export type DatasContextType = {
     setCode: React.Dispatch<React.SetStateAction<CodeType>>
 }
 
+export type PropsForm = {
+    code: CodeType,
+    setCode: React.Dispatch<React.SetStateAction<CodeType>>
+}
+
 export type PropsCode = {
     code: CodeType
 }

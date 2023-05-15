@@ -5,7 +5,7 @@ import { formatLink } from '../../utils/functions/formatLink';
 import { switchDisplay } from '../../utils/functions/switchDisplay';
 import { FaChevronCircleUp } from 'react-icons/fa';
 
-export default function Form({code, set}: PropsForm) {
+export default function Form({code, setCode}: PropsForm) {
   const [ qrcode, setQrCode ] = useState(code.qrcode);
   const [ imageSettings, setImageSettings ] = useState(code.qrcode.imageSettings);
   const [ toggleInput, setToggleInput ] = useState([
@@ -31,7 +31,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
   }, [imageSettings])
 
   useEffect(() => {
-    set({...code, qrcode: qrcode});
+    setCode({...code, qrcode: qrcode});
   }, [qrcode]);
 
   return (
@@ -57,7 +57,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
             !toggleInput[1].toggle
             ? (<label htmlFor="fgColor">Couleur principale</label>)
             : (<input type="color" name="fgColor" id="fgColor" 
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => set({...code, foregroundColor: e.target.value})} 
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCode({...code, foregroundColor: e.target.value})} 
               value={code.foregroundColor}
             />)
           }
@@ -69,7 +69,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
             !toggleInput[2].toggle
             ? (<label htmlFor="bgColor">Couleur secondaire</label>)
             : (<input type="color" name="bgColor" id="bgColor" 
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => set({...code, backgroundColor: e.target.value})} 
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCode({...code, backgroundColor: e.target.value})} 
               value={code.backgroundColor}
             />)
           }

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <HomeContainer>
       <QRCode code={code}/>
-      <Form code={code} set={setCode}/>
+      <Form code={code} setCode={setCode}/>
       <Networks networks={networks}/>
       <Networks networks={supports}/>
     </HomeContainer>
