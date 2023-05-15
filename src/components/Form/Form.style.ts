@@ -16,7 +16,7 @@ export const FormContainer = styled.form`
         inset: 0;
         margin-top: 0;
         gap: 0;
-
+        
         div {
             position: absolute;
             border-radius: initial;
@@ -89,19 +89,23 @@ export const Container = styled.div`
     }
 
     button {
-        width: 50px;
-        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
         background-color: rgba(255,255,255,1);
         border-radius: 0 15px 15px 0;
 
         svg {
-            width: 80%;
-            height: 80%;
+            width: 40px;
+            height: 40px;
         }
     }
 
     @media all and (min-width: 900px) {
         width: 220px;
         margin-inline: 0;
+
+        label, input, select {
+            width: 170px;
+        }
     }
 `;

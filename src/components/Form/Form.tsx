@@ -49,7 +49,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
               }} 
             />)
           }
-          <button type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
+          <button aria-label='link field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
         </Container>
 
         <Container className='fgColor'>
@@ -61,7 +61,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
               value={code.foregroundColor}
             />)
           }
-          <button type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
+          <button aria-label='foreground color field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
         </Container>
 
         <Container className='bgColor'>
@@ -73,7 +73,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
               value={code.backgroundColor}
             />)
           }
-          <button type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
+          <button aria-label='background color field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
         </Container>
 
         <Container className='level'>
@@ -87,11 +87,11 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
               <option value="H">Élevé</option>
             </select>)
           }
-          <button type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
+          <button aria-label='level field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
         </Container>
 
         {/* <Container className='src'>
-          <button type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
+          <button aria-label='source central image field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
           {
             !toggleInput[4].toggle
             ? (<label htmlFor="src">Icône QrCode</label>)
