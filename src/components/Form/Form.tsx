@@ -7,6 +7,7 @@ import { FaChevronCircleUp } from 'react-icons/fa';
 
 export default function Form({code, setCode}: PropsForm) {
   const [ qrcode, setQrCode ] = useState(code.qrcode);
+  const [ error, setError ] = useState('');
   const [ imageSettings, setImageSettings ] = useState(code.qrcode.imageSettings);
   const [ toggleInput, setToggleInput ] = useState([
     { class: 'link', toggle: false },
@@ -16,6 +17,19 @@ export default function Form({code, setCode}: PropsForm) {
     { class: 'src', toggle: false },
     { class: 'fontOptions', toggle: false }
   ]);
+
+  const checkLink = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const regex = new RegExp(/^[https://]/);
+    const link = document.querySelector('#link') as HTMLInputElement;
+    
+    if(!regex.test(link.value)) {
+      setError('Ce champ ne peut contenir que des liens url');
+      return
+    } else {
+      setError('');
+    }
+  }
   
   useEffect(() => {
     const labelLevel = document.querySelector('label[for="level"]');
@@ -35,7 +49,7 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
   }, [qrcode]);
 
   return (
-    <FormContainer>
+    <FormContainer onSubmit={checkLink}>
 
         <Container className="link">
           {
@@ -46,11 +60,12 @@ Cependant, une correction d'erreur plus élevée signifie également que le code
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setQrCode({...qrcode, value: e.target.value, imageSettings: imageSettings});
                 formatLink(e, imageSettings, setImageSettings);
-              }} 
+              }}
             />)
           }
           <button aria-label='link field' aria-describedby='click for switch display label or field' type="button" onClick={(e) => switchDisplay(e, toggleInput, setToggleInput)}><FaChevronCircleUp /></button>
         </Container>
+        {error === '' ? '' : <p className='errorMessage'>{error}</p>}
 
         <Container className='fgColor'>
           {

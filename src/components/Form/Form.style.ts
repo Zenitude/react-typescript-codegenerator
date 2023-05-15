@@ -11,12 +11,30 @@ export const FormContainer = styled.form`
         transform: rotate(180deg);
     }
 
+    .errorMessage {
+        width: 90%;
+        margin-inline: auto;
+        padding-left: 15px;
+        color: red;
+        filter: drop-shadow(0 0 1px red);
+    }
+
+    
+
     @media all and (min-width: 900px) {
         position: absolute;
         inset: 0;
         margin-top: 0;
         gap: 0;
         
+        .errorMessage {
+            max-width: 200px;
+            height: 50px;
+            position: absolute;
+            padding-left: 0;
+            top: 75px; 
+        }
+
         div {
             position: absolute;
             border-radius: initial;
