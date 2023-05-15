@@ -1,26 +1,30 @@
 import { createContext, useState } from "react";
-import { OptionsQrCode, ContextDatasProps, DatasContextType } from '../types/types';
-
+import { CodeType, ContextDatasProps, DatasContextType } from '../types/types';
+import icone from '../../assets/Zen.png';
 export const Context = createContext<DatasContextType | null>(null);
 
 export const ContextProvider = ({children} : ContextDatasProps) => {
-    const [ optionsQrCode, setOptionsQrCode ] = useState<OptionsQrCode>({
-        value: "https://picturesofpeoplescanningqrcodes.tumblr.com/",
-        size: 128,
-        bgColor: "#ffffff",
-        fgColor: "#000000",
-        level: "L",
-        includeMargin: false,
-        imageSettings: {
-          src: "https://static.zpao.com/favicon.png",
-          height: 24,
-          width: 24,
-          excavate: true,
+    const [ code, setCode ] = useState<CodeType>({
+        backgroundColor: "#ffffff",
+        foregroundColor: "#000000",
+        qrcode: {
+            value: "http://www.example.com/",
+            includeMargin: true,
+            size: 250,
+            level: "M",
+            imageSettings: {
+                src: icone,
+                x: undefined,
+                y: undefined,
+                height: 50,
+                width: 50,
+                excavate: true
+            }
         }
     })
     
     return(
-        <Context.Provider value={{optionsQrCode,setOptionsQrCode}}>
+        <Context.Provider value={{code,setCode}}>
             {children}
         </Context.Provider>
     )

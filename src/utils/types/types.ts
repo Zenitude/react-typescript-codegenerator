@@ -1,12 +1,16 @@
 import React from 'react';
 
-export type PropsCode = {
-    code: CodeType
+export type ContextDatasProps = {
+    children: React.ReactNode;
 }
 
-export type PropsForm = {
+export type DatasContextType = {
     code: CodeType,
-    set: React.Dispatch<React.SetStateAction<CodeType>>
+    setCode: React.Dispatch<React.SetStateAction<CodeType>>
+}
+
+export type PropsCode = {
+    code: CodeType
 }
 
 export type CodeType = {
@@ -17,14 +21,7 @@ export type CodeType = {
         includeMargin: boolean,
         size: number,
         level: string,
-        imageSettings: {
-        src: string,
-        x: undefined,
-        y: undefined,
-        height: number,
-        width: number,
-        excavate: boolean
-        }
+        imageSettings: ImageSettings
     }
   }
 
@@ -35,14 +32,6 @@ export type ImageSettings = {
     height: number,
     width: number,
     excavate: boolean
-}
-
-export type QrCodeType = {
-    value: string,
-    includeMargin: boolean,
-    size: number,
-    level: string,
-    imageSettings: ImageSettings
 }
 
 export type NetworksType = {
