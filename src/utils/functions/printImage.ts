@@ -1,16 +1,10 @@
-export const printImage = (code: string, svgRef: any) => {
-    const svg = svgRef.current!.children[0];
-    if (!svg) return;
+export const printImage = (e: React.MouseEvent, ref: React.RefObject<HTMLDivElement>) => {
+  e.preventDefault();
+  const canvas = ref.current!.children[0] as HTMLCanvasElement;  
+  const imageCenter = canvas!.children[0].children[2];
 
-    let img;
-
-    if(code === 'qrcode') {
-      img = svgRef.current!.children[0].children[2];
-      if(!img) return;
-    }
-
-    const windowContent = '<!DOCTYPE html>';
-    const printDocument = window.open('', '_blank', 'width=800,height=600,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes');
+  const windowContent = '<!DOCTYPE html>';
+  const printDocument = window.open('', '_blank', 'width=800,height=600,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes');
 
 
     if (!printDocument) return;
@@ -44,8 +38,8 @@ export const printImage = (code: string, svgRef: any) => {
         </head>
         <body>
           <div class="container">
-            ${svg.outerHTML}
-            ${code === 'qrcode' ? img.outerHTML : ''}
+            ${canvas.outerHTML}
+            ${imageCenter?.outerHTML}
           </div>
         </body>
       </html>

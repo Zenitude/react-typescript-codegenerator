@@ -1,51 +1,56 @@
-export type OptionsBarCode = {
-    value: string,
-    width: number,
-    height: number,
-    format: string | undefined,
-    displayValue: boolean,
-    fontOptions: string,
-    font: string,
-    textAlign: string,
-    textPosition: string,
-    textMargin: number,
-    fontSize: number,
-    background: string,
-    lineColor: string,
-    margin: number | undefined,
-    marginTop: number | undefined,
-    marginBottom: number | undefined,
-    marginLeft: number | undefined,
-    marginRight: number | undefined
+import React from 'react';
+
+export type PropsCode = {
+    code: CodeType
 }
 
-export type OptionsQrCode = {
-    value: string,
-    size: number,
-    bgColor: string,
-    fgColor: string,
-    level: string,
-    includeMargin: boolean,
-    imageSettings: ImageSettingsQrCode
+export type PropsForm = {
+    code: CodeType,
+    set: React.Dispatch<React.SetStateAction<CodeType>>
 }
 
-export type ImageSettingsQrCode = {
+export type CodeType = {
+    backgroundColor: string,
+    foregroundColor: string,
+    qrcode: {
+        value: string,
+        includeMargin: boolean,
+        size: number,
+        level: string,
+        imageSettings: {
+        src: string,
+        x: undefined,
+        y: undefined,
+        height: number,
+        width: number,
+        excavate: boolean
+        }
+    }
+  }
+
+export type ImageSettings = {
     src: string,
+    x: undefined,
+    y: undefined,
     height: number,
     width: number,
     excavate: boolean
 }
 
-export type PropsFormBar = {
-    options: OptionsBarCode;
-    setOptions: Function;
+export type QrCodeType = {
+    value: string,
+    includeMargin: boolean,
+    size: number,
+    level: string,
+    imageSettings: ImageSettings
 }
 
-export type PropsFormQr = {
-    options: OptionsQrCode;
-    setOptions: Function;
+export type NetworksType = {
+    name: string,
+    link: string,
+    icon: string
 }
 
-export type navProps = {
-    sizenav: number
-}
+export type NetworksProps = {
+    networks: NetworksType[]
+};

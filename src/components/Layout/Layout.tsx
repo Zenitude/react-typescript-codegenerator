@@ -1,12 +1,17 @@
-import { LayoutContainer } from './Layout.style';
-import Header from '../Header/Header';
-import Router from '../Router/Router';
+import { LayoutContainer, GlobalStyle } from "./Layout.style";
+import Header from "../Header/Header";
+import Router from "../Router/Router";
+import Footer from "../Footer/Footer";
 
 export default function Layout() {
   return (
-    <LayoutContainer>
-        <Header />
-        <Router />
-    </LayoutContainer>
+    <>
+      <GlobalStyle />
+      <LayoutContainer>
+          <Header />
+          <Router />
+          <Footer />
+      </LayoutContainer>
+    </>
   )
 }

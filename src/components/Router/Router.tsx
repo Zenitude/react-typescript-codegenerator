@@ -1,11 +1,10 @@
-import { Routes, Route } from 'react-router-dom';
-import { QRCode, BarCode } from './Path';
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./Paths";
 
-export default function Path() {
+export default function Router() {
   return (
     <Routes>
-        <Route path="/" element={<QRCode />} />
-        <Route path='/barcode' element={<BarCode />} />
+        <Route path="/" element={<Home />} />
     </Routes>
   )
 }
