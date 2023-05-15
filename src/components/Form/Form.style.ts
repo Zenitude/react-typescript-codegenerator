@@ -23,7 +23,7 @@ export const FormContainer = styled.form`
         }
 
         .link, .fgColor {
-            border-radius: 0 15px 15px 0;
+            border-radius: 15px;
 
             button {
                 border-radius: 0 15px 15px 0;
@@ -31,7 +31,7 @@ export const FormContainer = styled.form`
         }
 
         .level, .bgColor {
-            border-radius: 15px 0 0 15px;
+            border-radius: 15px;
 
             button {
                 border-radius: 15px 0 0 15px;
@@ -101,9 +101,7 @@ export const Container = styled.div`
     }
 
     @media all and (min-width: 900px) {
-        width: 300px;
+        width: 220px;
         margin-inline: 0;
-        
-        
     }
 `;

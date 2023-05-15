@@ -6,4 +6,6 @@ export const HomeContainer = styled.main`
     align-items: center;
     flex-grow: 1;
     position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
 `;
